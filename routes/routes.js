@@ -5,16 +5,27 @@ const router = express.Router()
 module.exports = router
 
 router.post('/phones', async (req, res) => {
+    const { 
+        name,
+        manufacturer,
+        description,
+        color,
+        price,
+        imageFileName,
+        screen,
+        processor,
+        ram
+    } = req.body
     const data = new Phone({
-        name: req.body.name,
-        manufacturer: req.body.manufacturer,
-        description: req.body.description,
-        color: req.body.color,
-        price: req.body.price,
-        imageFileName: req.body.imageFileName,
-        screen: req.body.screen,
-        processor: req.body.processor,
-        ram: req.body.ram
+        name,
+        manufacturer,
+        description,
+        color,
+        price,
+        imageFileName,
+        screen,
+        processor,
+        ram
     })
 
     try{
@@ -25,7 +36,6 @@ router.post('/phones', async (req, res) => {
         res.status(400).json({message: error.message})
     }
 })
-
 
 router.get('/phones', async (req, res) => {
     try{

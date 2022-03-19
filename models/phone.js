@@ -36,8 +36,7 @@ const dataSchema = new mongoose.Schema({
     ram: {
         required: true,
         type: Number
-    },
-    
+    }
 })
 
 module.exports = mongoose.model('Phone', dataSchema)
