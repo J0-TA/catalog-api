@@ -1,11 +1,12 @@
 # Server and Api
 
 
+
 ## Installation
 
-1. npm install
-2. node seeds.js
-3. npm start
+npm install
+node seeds.js
+npm start
 
 
 ## Api routes:
