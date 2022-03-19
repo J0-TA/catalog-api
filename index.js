@@ -4,6 +4,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const routes = require('./routes/routes')
 const cors = require('cors')
+const path = require('path')
 
 let mongoString = process.env.NODE_ENV === 'testing' 
     ? process.env.DATABASE_URI_TEST
@@ -39,6 +40,7 @@ const app = express()
 app.use(express.json())
 app.use(cors(corsOptions))
 app.use('/api', routes)
+app.use(express.static(path.resolve(__dirname, './public')))
 app.listen(8000, () => {
     console.log(`Server Started at ${8000}`)
 })
