@@ -22,7 +22,6 @@ const dataSchema = new mongoose.Schema({
         type: Number
     },
     imageFileName: {
-        required: true,
         type: String,
         default: 'images/placeholder.png'
     },

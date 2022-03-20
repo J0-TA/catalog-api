@@ -11,7 +11,6 @@ router.post('/phones', async (req, res) => {
         description,
         color,
         price,
-        imageFileName,
         screen,
         processor,
         ram
@@ -22,7 +21,6 @@ router.post('/phones', async (req, res) => {
         description,
         color,
         price,
-        imageFileName,
         screen,
         processor,
         ram
@@ -47,7 +45,8 @@ router.get('/phones', async (req, res) => {
     }
 })
 
-router.patch('/phones/:id', async (req, res) => {
+router.put('/phones/:id', async (req, res) => {
+    console.log(req.body)
     try{
         const id = req.params.id
         const updatedData = req.body
