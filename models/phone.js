@@ -23,7 +23,8 @@ const dataSchema = new mongoose.Schema({
     },
     imageFileName: {
         required: true,
-        type: String
+        type: String,
+        default: 'images/placeholder.png'
     },
     screen: {
         required: true,
