@@ -29,6 +29,8 @@ router.post('/phones', async (req, res) => {
     try{
         const dataToSave = await data.save()
         res.status(200).json(dataToSave)
+        console.log(`POST /phones`)
+        console.log(`${dataToSave.name} has been added...`)
     }
     catch(error){
         res.status(400).json({message: error.message})
@@ -46,7 +48,6 @@ router.get('/phones', async (req, res) => {
 })
 
 router.put('/phones/:id', async (req, res) => {
-    console.log(req.body)
     try{
         const id = req.params.id
         const updatedData = req.body
@@ -57,6 +58,8 @@ router.put('/phones/:id', async (req, res) => {
         )
 
         res.send(result)
+        console.log(`PUT /phones/${id}`)
+        console.log(`${result.name} has been edited...`)
     }
     catch(error){
         res.status(400).json({ message: error.message })
@@ -69,6 +72,8 @@ router.delete('/phones/:id', async (req, res) => {
         const data = await Phone.findByIdAndDelete(id)
         
         res.send(`${data.name} has been deleted...`)
+        console.log(`DELETE /phones/${id}`)
+        console.log(`${data.name} has been deleted...`)
     }
     catch(error){
         res.status(400).json({ message: error.message })
