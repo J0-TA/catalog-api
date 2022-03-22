@@ -3,7 +3,7 @@ Backend based on nodejs, express and mongoDB with mongoose.
 
 ## Installation
 
-Run thes commands to setup the server:
+Run these commands to setup the server:
 
 To install dependencies:
 ```zhs
